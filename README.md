@@ -1,19 +1,20 @@
 # PyJen_Project
 Running Python App with SonarQube &amp; Jenkins
 
-##System
+## System
+```
 visudo
 ubuntu  ALL=(ALL:ALL) NOPASSWD: ALL
 nano /etc/ssh/sshd_config
 PermitRootLogin yes
 PasswordAuthentication no
-
+```
 ubuntu@ip-172-31-19-112:~$ sudo visudo
 ubuntu@ip-172-31-19-112:~$ sudo nano /etc/ssh/sshd_config
 ubuntu@ip-172-31-19-112:~$ sudo systemctl restart sshd
 ubuntu@ip-172-31-19-112:~$ sudo systemctl restart sshd
 
-##Docker
+## Docker
 ubuntu@ip-172-31-19-112:~$ nano docker.sh
 ```
 sudo apt update -y
@@ -27,7 +28,7 @@ sudo usermod -aG docker ${USER}
 ```
 ubuntu@ip-172-31-19-112:~$ bash docker.sh
 
-#DockerCompose
+# DockerCompose
 ubuntu@ip-172-31-19-112:~$ nano doccom.sh
 ```
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -40,7 +41,7 @@ docker-compose --version
 ```
 ubuntu@ip-172-31-19-112:~$ bash doccom.sh
 
-#Docker Compose YAML
+# Docker Compose YAML
 ubuntu@ip-172-31-19-112:~$ docker-compose.yml
 ```
 version: '2'
@@ -104,7 +105,7 @@ root@ip-172-31-19-112:~# docker ps
 root@ip-172-31-19-112:~# docker restart 9dcf50d5813f
 
 
-#Terraform
+# Terraform
 ubuntu@ip-172-31-19-112:~$ sudo apt-get update
 root@ip-172-31-19-112:~# nano terrafor.sh
 ```
@@ -115,7 +116,7 @@ sudo apt update && sudo apt install terraform
 
 root@ip-172-31-19-112:~# bash terrafor.sh
 
-#JENKINS
+# JENKINS
 ubuntu@ip-172-31-19-112:~$ sudo apt update
 ubuntu@ip-172-31-19-112:~$ sudo nano jenkins.sh
 ```
@@ -134,7 +135,7 @@ ubuntu@ip-172-31-19-112:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPasswor
 ubuntu@ip-172-31-19-112:~$ nano docker-compose.yml
 ubuntu@ip-172-31-19-112:~$ sudo docker-compose up -d
 
-#AWS CLI
+# AWS CLI
 ```
 root@ip-172-31-19-112:~# sudo apt-get install awscli -y &&
 sudo apt install python-pip -y &&
@@ -163,7 +164,7 @@ ubuntu@ip-172-31-19-112:/var/lib/jenkins/workspace/terra_pipe$ aws ec2 describe-
  54.204.185.231
 
 
-#GIT
+# GIT
 ```
 root@ip-172-31-19-112:~# git init
 root@ip-172-31-19-112:~# git remote add origin 
