@@ -106,7 +106,7 @@ root@ip-172-31-19-112:~# docker ps
 root@ip-172-31-19-112:~# docker restart 9dcf50d5813f
 
 
-# Terraform
+# TERRAFORM
 ubuntu@ip-172-31-19-112:~$ sudo apt-get update
 root@ip-172-31-19-112:~# nano terrafor.sh
 ```
@@ -132,6 +132,34 @@ sudo systemctl start jenkins
 # sudo ufw enable
 ```
 ubuntu@ip-172-31-19-112:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+# JENKINS PIPELINE
+```
+pipeline {
+    agent any
+    tools {
+       terraform 'Terraform'
+    }
+    stages {
+        stage('Git checkout') {
+           steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/devops-parth/pyterrakube']]])
+            }
+        }
+        stage('terraform Init') {
+            steps{
+                sh 'terraform init'
+            }
+        }
+        stage('terraform apply') {
+            steps{
+                sh 'terraform apply --auto-approve'
+            }
+        }
+    }  
+}
+```
+
 
 ubuntu@ip-172-31-19-112:~$ nano docker-compose.yml
 ubuntu@ip-172-31-19-112:~$ sudo docker-compose up -d
