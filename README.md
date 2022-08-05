@@ -9,6 +9,7 @@ nano /etc/ssh/sshd_config
 PermitRootLogin yes
 PasswordAuthentication no
 ```
+
 ubuntu@ip-172-31-19-112:~$ sudo visudo
 ubuntu@ip-172-31-19-112:~$ sudo nano /etc/ssh/sshd_config
 ubuntu@ip-172-31-19-112:~$ sudo systemctl restart sshd
