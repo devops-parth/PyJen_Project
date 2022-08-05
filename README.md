@@ -207,3 +207,12 @@ root@ip-172-31-19-112:~# git push origin master
 Username for 'https://github.com': devops-parth
 Password for 'https://devops-parth@github.com':
 ```
+
+# Dockerfile
+```
+FROM python
+WORKDIR /app
+COPY c29.py /app
+EXPOSE 8080
+CMD [ "python","c29.py" ]
+```
