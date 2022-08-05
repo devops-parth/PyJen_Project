@@ -175,6 +175,9 @@ ubuntu@ip-172-31-19-112:~$ sudo docker-compose up -d
 root@ip-172-31-19-112:~# sudo apt-get install awscli -y &&
 sudo apt install python-pip -y &&
 sudo apt install openjdk-8-jdk
+
+cat ~/.aws/config
+cat ~/.aws/credentials
 ```
 ubuntu@ip-172-31-19-112:~$ aws configure
 ubuntu@ip-172-31-19-112:~$ aws --version
@@ -215,4 +218,20 @@ WORKDIR /app
 COPY c29.py /app
 EXPOSE 8080
 CMD [ "python","c29.py" ]
+
+#RUN pip install -r requirements.txt
+#$ docker build -t push-example .
+#$ docker build -t devopsparth/push-example .
+#$ docker login
+#$ docker push devopsparth/push-example
+```
+# Remove Old Images
+```
+#!/bin/bash
+
+LOOP=$(docker images | awk '{ print $3 }')
+for i in $LOOP
+do
+    docker rmi $i -f
+done
 ```
