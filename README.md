@@ -2,6 +2,12 @@
 Running Python App with SonarQube &amp; Jenkins
 
 ## System
+
+- t2.medium
+- roles: EC2
+- SG: port 22, 8080, 9000
+- Jenkins>> ip:8080
+- Sonarqube>> ip:9000
 ```
 visudo
 ubuntu  ALL=(ALL:ALL) NOPASSWD: ALL
@@ -92,7 +98,7 @@ volumes:
 ubuntu@ip-172-31-19-112:~$ sudo docker-compose up -d
 ubuntu@ip-172-31-19-112:~$ docker ps
 root@ip-172-31-19-112:~# docker logs 9dcf50d5813f
-
+docker exec -it containerID bash
 root@ip-172-31-19-112:~# ssh-keygen
 root@ip-172-31-19-112:~# ls -a
 .  ..  .bashrc  .lesshst  .local  .profile  .ssh  snap
