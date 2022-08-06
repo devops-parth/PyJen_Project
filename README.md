@@ -235,3 +235,11 @@ do
     docker rmi $i -f
 done
 ```
+
+#NODE Config
+```
+sudo apt update
+sudo apt install default-jdk
+sudo apt install default-jre
+```
+
