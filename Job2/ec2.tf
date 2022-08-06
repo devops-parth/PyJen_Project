@@ -18,6 +18,7 @@ resource "aws_instance" "myec2" {
     sudo chmod +x /home/ubuntu/kubectl
     sudo cp kubectl /usr/local/bin/kubectl
     sudo usermod -aG docker ubuntu
+    sudo minikube config set vm-driver none
     minikube start
     sudo apt install git -y
     git init
