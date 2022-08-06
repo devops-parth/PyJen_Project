@@ -236,7 +236,7 @@ do
 done
 ```
 
-#NODE Config
+# NODE Config
 ```
 sudo apt update
 sudo apt install default-jdk
