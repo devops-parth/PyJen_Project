@@ -1,3 +1,4 @@
+```
 #!/bin/bash
 sudo apt update -y
 sudo apt install docker.io -y
@@ -19,3 +20,27 @@ sudo apt-get update -y
 cd pyterrakube/
 kubectl apply -f deployment.yml
 kubectl apply -f service.yml
+```
+
+## ====================================================
+
+```
+apt-get install docker.io
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+kubectl version --client -o json
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_1.6.2.deb  && sudo dpkg -i minikube_1.6.2.deb
+
+sudo minikube config set vm-driver none
+sudo minikube start &  
+
+
+sudo minikube status
+	host: Running
+	kubelet: Running
+	apiserver: Running
+	kubeconfig: Configured
+```
